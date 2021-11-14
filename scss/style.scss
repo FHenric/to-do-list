@@ -1,0 +1,64 @@
+@mixin task($classe) {
+
+    .#{$classe} .task {width: 100%;
+        
+        @if $classe == notcomp{
+            background-image: linear-gradient(120deg, rgba(118, 142, 177, 0.5), rgba(230, 235, 253, 0.5)) ;
+            color: #000;
+        }
+        @if $classe == comp {
+            background-color:  rgba(46, 55, 68, 0.5) ;
+            color: rgb(192, 192, 192);
+        }
+        padding: 18px;
+        font-size: 19px;
+        margin: 6px 0;
+        border-radius: 3px;
+        overflow: hidden;
+
+        i{
+            float: right;
+            margin-left: 20px;
+            cursor: pointer;
+
+        } 
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(120deg, #dcdde1, #487eb0) ;
+    min-height: 100vh;
+
+   
+
+    .container{
+        max-width: 800px;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .texto{
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #000;
+        background: none;
+        padding: 10px;
+        outline: none;
+        font-size: 18px;
+    } 
+    
+    h3{
+        margin: 10px 0;
+    }
+
+    @include task(comp);
+
+    @include task(notcomp)
+}
